@@ -8,20 +8,21 @@ else()
     set(CMAKE_CXX_FLAGS "-Wall -Werror -Wextra -Wpedantic -O3" )
 endif()
 
-set(COMMON "${CMAKE_SOURCE_DIR}/../common/install")
-find_path(COMMON_INLCUDE NAMES test.h HINTS "${COMMON}/include")
-message(${COMMON_INLCUDE})
-set(COMMON_LIB "${COMMON}/lib")
-message(${COMMON_LIB})
+set(COMMON ${CMAKE_SOURCE_DIR}/../common/install)
+set(COMMON_INCLUDE ${COMMON}/include)
+set(COMMON_LIB ${COMMON}/lib)
+set(IOCOLORS ${CMAKE_SOURCE_DIR}/../common/iocolors/build/install)
+set(IOCOLORS_INCLUDE ${IOCOLORS}/include)
+set(IOCOLORS_LIB ${IOCOLORS}/lib)
 
-set(PROJECT_INCLUDE "${CMAKE_SOURCE_DIR}/include")
+set(PROJECT_INCLUDE ${CMAKE_SOURCE_DIR}/include)
 
 include_directories(${COMMON_INCLUDE} ${PROJECT_INCLUDE})
 
-link_directories(${COMMON_LIB})
+link_directories(${COMMON_LIB} ${IOCOLORS_LIB})
 
-add_executable(unittest test/unittest.c src/file.c)
+add_executable(unittest test/unittest.c src/file.c ${PROJECT_INCLUDE}/file.h)
 
-target_include_directories(unittest PUBLIC ${COMMON_INCLUDE} ${PROJECT_INCLUDE})
+target_include_directories(unittest PUBLIC ${COMMON_INCLUDE} ${PROJECT_INCLUDE} ${IOCOLORS_INCLUDE})
 
-target_link_libraries(unittest common)
+target_link_libraries(unittest common iocolors)

@@ -19,6 +19,7 @@ link_directories(${IOCOLORS_LIB})
 include_directories(include ${IOCOLORS_INCLUDE})
 
 add_library(common src/test.c)
+set_property(TARGET common PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_include_directories(common PUBLIC include ${IOCOLORS_INCLUDE})
 target_link_libraries(common iocolors)
 

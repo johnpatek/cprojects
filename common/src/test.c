@@ -4,18 +4,18 @@ void eprint_result(int result)
 {
     ioc_font_t font;
     int color = RED; 
-    char *msg = "fail";
+    char *msg = "FAIL";
 
     if(result)
     {
         color = GREEN;
-        msg = "pass";
+        msg = "PASS";
     }
 
     (void) ioc_encode_font(
         &font,
         NONE,
-        RED, 
+        color, 
         DEFAULT);
 
     (void) ioc_eprintf(

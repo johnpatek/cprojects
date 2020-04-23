@@ -10,7 +10,7 @@ static int NAME ## _value()                                          \
     eprintf("%s: ",#NAME);                                           \
     int result = 1;                                                  \
     NAME ## _function(&result);                                      \
-    eprintf("%d\n",result);                                          \
+    eprint_result(result);                                           \
     return result;                                                   \
 }                                                                    \
 static void NAME ## _function(int * const result)                    \
