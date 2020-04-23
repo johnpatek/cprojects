@@ -22,7 +22,6 @@ Open the terminal of your choice:
 mkdir ~/learncpp
 cd ~/learncpp
 git clone https://github.com/johnpatek/cprojects.git
-cd cprojects
 ```
 
 Windows:
@@ -33,7 +32,4 @@ Open the Native Tools Command Prompt for Windows:
 mkdir %USERPROFILE%\learncpp
 cd %USERPROFILE%\learncpp
 git clone https://github.com/johnpatek/cprojects.git
-cd cprojects
 ```
-
-## 

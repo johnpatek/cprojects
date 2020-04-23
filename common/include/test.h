@@ -2,6 +2,7 @@
 #include <iocolors.h>
 
 void eprint_result(int result);
+void eprint_score(int passing, int total);
 
 #define TEST_CASE(NAME)                                              \
 static void NAME ## _function(int * const result);                   \
@@ -35,10 +36,9 @@ static void unit_test(                                               \
     int * const total);                                              \
 int main()                                                           \
 {                                                                    \
-    int passing, total;                                              \
-    unit_test(                                                       \
-        &passing,                                                    \
-        &total);                                                     \
+    int passing = 0, total = 0;                                      \
+    unit_test(&passing,&total);                                      \
+    eprint_score(passing,total);                                     \
     return 0;                                                        \
 }                                                                    \
 static void unit_test(                                               \
