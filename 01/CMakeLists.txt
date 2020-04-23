@@ -5,7 +5,7 @@ project(cprojects01)
 if(WIN32)
 
 else()
-    set(CMAKE_CXX_FLAGS "-Wall -Werror -Wextra -Wpedantic -O3" )
+    set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -O3" )
 endif()
 
 set(COMMON ${CMAKE_SOURCE_DIR}/../common/install)
@@ -21,7 +21,13 @@ include_directories(${COMMON_INCLUDE} ${PROJECT_INCLUDE})
 
 link_directories(${COMMON_LIB} ${IOCOLORS_LIB})
 
-add_executable(unittest test/unittest.c src/file.c ${PROJECT_INCLUDE}/file.h)
+file(GLOB UNIT_TEST_SOURCES
+    "test/*.c"
+    "include/*.h"    
+    "src/*.c"
+)
+
+add_executable(unittest ${UNIT_TEST_SOURCES})
 
 target_include_directories(unittest PUBLIC ${COMMON_INCLUDE} ${PROJECT_INCLUDE} ${IOCOLORS_INCLUDE})
 
