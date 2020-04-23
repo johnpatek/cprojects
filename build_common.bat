@@ -1,7 +1,5 @@
 @echo off
-cd common
-git submodule update --init --recursive
-cd iocolors
+cd common\iocolors
 if not exist build mkdir build
 cd build
 cmake ..

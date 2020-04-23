@@ -20,6 +20,6 @@ void eprint_result(int result)
 
     (void) ioc_eprintf(
         &font,
-        "%s\n",
+        "result\n",
         msg);   
 }
