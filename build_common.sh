@@ -1,4 +1,6 @@
-cd common/iocolors
+cd common
+git submodule update --init --recursive
+cd iocolors
 if [ ! -d "build" ]; then
     mkdir build
 fi
