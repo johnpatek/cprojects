@@ -1,4 +1,5 @@
 #include "calc.h"
+#include <stdlib.h>
 
 /**
  * Description:
@@ -18,15 +19,13 @@
  *  following:
  *   
  *   1. Return the average of the int values stored in nums.
- *   2. Return 0 if the size is 0.
+ *   2. Return 0 if size < 1.
  *   3. Return 0 if nums is NULL.
  *
  */
 int avg(const int* nums, int size)
 {
-    int result = 0;
-
-    return result;
+    
 }
 
 /**
@@ -47,15 +46,13 @@ int avg(const int* nums, int size)
  *  following:
  *   
  *   1. Return the sum of the int values stored in terms.
- *   2. Return 0 if the size is 0.
+ *   2. Return 0 if size < 1.
  *   3. Return 0 if terms is NULL.
  *
  */
 int sum(const int* terms, int size)
 {
-    int result = 0;
 
-    return result;
 }
 
 /**
@@ -76,13 +73,11 @@ int sum(const int* terms, int size)
  *  following:
  *   
  *   1. Return the product of the int values stored in nums.
- *   2. Return 0 if the size is 0.
+ *   2. Return 0 if size < 1.
  *   3. Return 0 if factors is NULL.
  *
  */
 int prod(const int* factors, int size)
 {
-    int result = 1;
 
-    return result;
 }
